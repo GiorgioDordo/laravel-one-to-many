@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('projects',function(Blueprint $table) {
             $table->id();
             $table->string("name")->nullable(false);
-            $table->text("languages")->nullable(false);
             $table->string("short_description")->nullable(true);
             $table->text("description")->nullable(false);
             $table->string("image")->nullable(true);

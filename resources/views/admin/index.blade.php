@@ -12,7 +12,6 @@
             <div class="card-body">
                 <p><strong>{{$project["name"]}}</strong></p>
                 <p>{{$project->type->name}}</p>
-                <p>{{$project["languages"]}}</p>
                 <p>{{$project["short_description"]}}</p>
                 <p>{{$project["description"]}}</p>
             </div>

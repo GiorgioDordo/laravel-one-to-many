@@ -21,7 +21,6 @@ class ProjectSeeder extends Seeder
             [
               "name" => "Boolzapp",
               "type_id" => 3,
-              "languages" => "Vue, Js, Html, Css.",
               "short_description" => "Ricreata l'applicazione whatsapp",
               "description" => "Ricreato il layout delll'applicazione whatsapp e resa responsive.",
               "image" => "#"
@@ -29,7 +28,6 @@ class ProjectSeeder extends Seeder
             [
                 "name" => "Vite Yu-Gi-Oh",
                 "type_id" => 2,
-                "languages" => "Vue, Js, Html, Css.",
                 "short_description" => "Usata api",
                 "description" => "Usata api per mostrare le carte yu-gi-oh",
                 "image" => "#"
@@ -37,7 +35,6 @@ class ProjectSeeder extends Seeder
             [
                 "name" => "Boolflix",
                 "type_id" => 3,
-                "languages" => "Vue, Js, Html, Css.",
                 "short_description" => "Usato api",
                 "description" => "Usata api per mostrare i film con tutti i suoi dati.",
                 "image" => "#"
@@ -45,7 +42,6 @@ class ProjectSeeder extends Seeder
             [
                 "name" => "laravel-template",
                 "type_id" => 2,
-                "languages" => "laravel",
                 "short_description" => "template",
                 "description" => "Creata template",
                 "image" => "#"
@@ -57,7 +53,6 @@ class ProjectSeeder extends Seeder
                 $newProject = new Project();
                 $newProject->name = $project['name'];
                 $newProject->type_id = $project['type_id'];
-                $newProject->languages = $project['languages'];
                 $newProject->short_description = $project['short_description'];
                 $newProject->description = $project['description'];
                 $newProject->image = $project['image'];
