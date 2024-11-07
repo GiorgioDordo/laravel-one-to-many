@@ -18,7 +18,7 @@ return new class extends Migration
             // TODO: crea un nuovo vincolo di chiave esterna (foreign key)
             // TODO: sulla mia colonna type_id
             // TODO: che faccia riferimento alla colonna id della tabella projects
-            $table->foreign("type_id")->references("id")->on("projects");
+            $table->foreign("type_id")->references("id")->on("types");
         });
     }
 

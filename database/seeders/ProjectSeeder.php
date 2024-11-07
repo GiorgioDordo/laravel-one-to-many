@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
+use App\Models\Type;
 
 class ProjectSeeder extends Seeder
 {
@@ -13,9 +14,13 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
+
+        // $typeIds = Type::all()->pluck("id");
+
         $projects = [
             [
               "name" => "Boolzapp",
+              "type_id" => 3,
               "languages" => "Vue, Js, Html, Css.",
               "short_description" => "Ricreata l'applicazione whatsapp",
               "description" => "Ricreato il layout delll'applicazione whatsapp e resa responsive.",
@@ -23,28 +28,40 @@ class ProjectSeeder extends Seeder
             ],
             [
                 "name" => "Vite Yu-Gi-Oh",
-                "short_description" => "Usata api",
+                "type_id" => 2,
                 "languages" => "Vue, Js, Html, Css.",
+                "short_description" => "Usata api",
                 "description" => "Usata api per mostrare le carte yu-gi-oh",
                 "image" => "#"
             ],
             [
                 "name" => "Boolflix",
-                "short_description" => "Usato api",
+                "type_id" => 3,
                 "languages" => "Vue, Js, Html, Css.",
+                "short_description" => "Usato api",
                 "description" => "Usata api per mostrare i film con tutti i suoi dati.",
+                "image" => "#"
+            ],
+            [
+                "name" => "laravel-template",
+                "type_id" => 2,
+                "languages" => "laravel",
+                "short_description" => "template",
+                "description" => "Creata template",
                 "image" => "#"
             ],
             ];
 
+
             foreach ($projects as $project) {
                 $newProject = new Project();
                 $newProject->name = $project['name'];
+                $newProject->type_id = $project['type_id'];
                 $newProject->languages = $project['languages'];
                 $newProject->short_description = $project['short_description'];
                 $newProject->description = $project['description'];
                 $newProject->image = $project['image'];
                 $newProject->save();
-            }
+            };
     }
 };
