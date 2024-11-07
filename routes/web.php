@@ -25,5 +25,6 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
-    Route::get("/projects", [AdminProjectController::class, "index"]) ->name("projects.index");
+    Route::get("/home", [AdminProjectController::class, "index"]) ->name("projects.index");
+    Route::get("/project/{id}", [AdminProjectController::class, "show"])->name("show");
 });

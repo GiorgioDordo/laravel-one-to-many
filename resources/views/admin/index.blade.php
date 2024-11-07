@@ -10,10 +10,9 @@
         @foreach ($projects as $index => $project)
         <div class="col-3 m-3 p-3 card">
             <div class="card-body">
-                <p><strong>{{$project["name"]}}</strong></p>
+                <p><strong><a href="{{Route("admin.show",$project->id)}}">{{$project->name}}</a></strong></p>
                 <p>{{$project->type->name}}</p>
-                <p>{{$project["short_description"]}}</p>
-                <p>{{$project["description"]}}</p>
+                <p>{{$project->short_description}}</p>
             </div>
         </div>
         @endforeach
