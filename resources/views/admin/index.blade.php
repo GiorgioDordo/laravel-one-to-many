@@ -11,6 +11,7 @@
         <div class="col-3 m-3 p-3 card">
             <div class="card-body">
                 <p><strong>{{$project["name"]}}</strong></p>
+                <p>{{$project->type->name}}</p>
                 <p>{{$project["languages"]}}</p>
                 <p>{{$project["short_description"]}}</p>
                 <p>{{$project["description"]}}</p>
