@@ -33,14 +33,16 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         //
+
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        $project = Project::findOrFail($id);
+        // $project = Project::findOrFail($id);
         return view ("admin.show", compact("project"));
     }
 
