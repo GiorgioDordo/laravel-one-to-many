@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use App\Models\Project;
 use App\Models\Type;
 
@@ -20,7 +21,7 @@ class ProjectSeeder extends Seeder
         $projects = [
             [
               "name" => "Boolzapp",
-              "type_id" => 3,
+              "type_id" => 1,
               "short_description" => "Ricreata l'applicazione whatsapp",
               "description" => "Ricreato il layout delll'applicazione whatsapp e resa responsive.",
               "image" => "#"
@@ -56,6 +57,7 @@ class ProjectSeeder extends Seeder
                 $newProject->short_description = $project['short_description'];
                 $newProject->description = $project['description'];
                 $newProject->image = $project['image'];
+                $newProject->slug = Str::slug($newProject->name, '-');
                 $newProject->save();
             };
     }
