@@ -10,7 +10,7 @@
             <h1>CREA PROGETTO</h1>
         </div>
         <div class="card-body">
-            <form action="" method="">
+            <form action="{{route('projects.store')}}" method="POST">
                 <div class="row d-flex flex-column">
                     <div class="col">
                         <div class="mb-3">
@@ -48,6 +48,10 @@
                             <label for="image" class="form-label">Image</label>
                             <input type="url" class="form-control" id="image">
                         </div>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button type="submit" class="btn btn-success">CREA</button>
+                        <button type="reset" class="btn btn-warning">RESET</button>
                     </div>
                 </div>
             </form>

@@ -34,4 +34,8 @@ Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
     // Rotta per mostrare i singoli progetti
     Route::get("/projects/{project}", [AdminProjectController::class, "show"])->name("projects.show");
     // Route::get("/home", [AdminProjectController::class, "store"])->name("store");
+
+    // Rotta per salvare nuovi progetti creati nel database
+    Route::post("/projects", [AdminProjectController::class, "store"])->name("projects.store");
+
 });
