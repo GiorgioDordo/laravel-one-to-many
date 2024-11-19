@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, '__invoke'])->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
     Route::get("/projects", [AdminProjectController::class, "index"]) ->name("projects.index");
