@@ -25,8 +25,13 @@ Auth::routes();
 Route::get('/', HomeController::class)->name('home');
 
 Route::middleware("auth")->prefix("/admin")->name("admin.")->group(function(){
+    // Rotta per mostrare tutti i progetti
     Route::get("/projects", [AdminProjectController::class, "index"]) ->name("projects.index");
-    Route::get("/projects/{project}", [AdminProjectController::class, "show"])->name("show");
-    // Route::get("/prorject/create", [AdminProjectController::class, "create"])->name("create");
+
+    // Rotta per creare i progetti
+    Route::get("/projects/create", [AdminProjectController::class, "create"])->name("projects.create");
+
+    // Rotta per mostrare i singoli progetti
+    Route::get("/projects/{project}", [AdminProjectController::class, "show"])->name("projects.show");
     // Route::get("/home", [AdminProjectController::class, "store"])->name("store");
 });
