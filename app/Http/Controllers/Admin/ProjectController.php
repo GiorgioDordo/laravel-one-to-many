@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Models\Project;
-use App\Models\Type;
 use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Type;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -26,7 +26,8 @@ class ProjectController extends Controller
     public function create()
     {
         //
-        return view("admin.create");
+        $types = Type::all();
+        return view("admin.create", compact("types"));
     }
 
     /**
@@ -34,7 +35,19 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $formData = $request->all();
+
+        $project = new Project();
+
+        $project->name = $formData['name'];
+        $project->type_id = $formData['type_id'];
+        $project->short_description = $formData['short_description'];
+        $project->description = $formData['description'];
+        $project->image = $formData['image'];
+        $project->slug = Str::slug($project->name);
+        $project->save();
+
+        return redirect()->route("admin.projects.show", $project->id);
 
     }
 

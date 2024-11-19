@@ -15,16 +15,16 @@
                 <div class="row d-flex flex-column">
                     <div class="col mb-3">
                         <label for="name" class="form-label">Nome</label>
-                        <input type="text" name="name" class="form-control" id="name">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="progetto">
                     </div>
 
                     <div class="col mb-3">
-                        <label class="form-label" for="type">Type</label>
-                        <select class="form-select" name="type" id="type" aria-label="Default select example">
-                            <option value="1">Full-Stack</option>
-                            <option value="2">Front-End</option>
-                            <option value="3">Back-End</option>
-                            <option value="4">Database</option>
+                        <label class="form-label" for="type_id">Type</label>
+                        <select class="form-select" name="type_id" id="type_id" aria-label="Default select example">
+                            <option value="">Selezione il tipo di progetto</option>
+                            @foreach($types as $type)
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @endforeach
                         </select>
                     </div>
 
