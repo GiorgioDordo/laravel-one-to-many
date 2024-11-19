@@ -10,13 +10,12 @@
             <h1>CREA PROGETTO</h1>
         </div>
         <div class="card-body">
-            <form action="{{route('projects.store')}}" method="POST">
+            <form action="{{route('admin.projects.store')}}" method="POST">
+                @csrf
                 <div class="row d-flex flex-column">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
+                    <div class="col mb-3">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" name="name" class="form-control" id="name">
                     </div>
 
                     <div class="col mb-3">
@@ -29,26 +28,21 @@
                         </select>
                     </div>
 
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="short_description" class="form-label">Short Description</label>
-                            <textarea type="text" class="form-control" id="short_description" rows="2"></textarea>
-                        </div>
+                    <div class="col mb-3">
+                        <label for="short_description" class="form-label">Short Description</label>
+                        <textarea type="text" name="short_description" class="form-control" id="short_description" rows="2"></textarea>
                     </div>
 
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea type="text" class="form-control" id="description" rows="4"></textarea>
-                        </div>
+                    <div class="col mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea type="text" name="description" class="form-control" id="description" rows="4"></textarea>
                     </div>
 
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="image" class="form-label">Image</label>
-                            <input type="url" class="form-control" id="image">
-                        </div>
+                    <div class="col mb-3">
+                        <label for="image" class="form-label">Image</label>
+                        <input type="url" name="image" class="form-control" id="image">
                     </div>
+
                     <div class="d-flex justify-content-around">
                         <button type="submit" class="btn btn-success">CREA</button>
                         <button type="reset" class="btn btn-warning">RESET</button>
