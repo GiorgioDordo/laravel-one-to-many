@@ -39,11 +39,15 @@ class ProjectController extends Controller
 
         $project = new Project();
 
-        $project->name = $formData['name'];
+        // $project->name = $formData['name'];
+        // $project->type_id = $formData['type_id'];
+        // $project->short_description = $formData['short_description'];
+        // $project->description = $formData['description'];
+        // $project->image = $formData['image'];
+
+        // Todo: posso prendere i dati uno ad uno oppure utilizzare il fill
+        $project->fill($formData);
         $project->type_id = $formData['type_id'];
-        $project->short_description = $formData['short_description'];
-        $project->description = $formData['description'];
-        $project->image = $formData['image'];
         $project->slug = Str::slug($project->name);
         $project->save();
 
