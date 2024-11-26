@@ -24,6 +24,8 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <a href="{{route('home')}}">Home</a>
+
+                <a class="ms-3" href="{{Route('admin.projects.index')}}">Projects</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

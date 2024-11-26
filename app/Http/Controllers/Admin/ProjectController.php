@@ -51,6 +51,11 @@ class ProjectController extends Controller
         $project->slug = Str::slug($project->name);
         $project->save();
 
+        // Todo: altro modo per prendere i dati tramite create
+        // $formData["slug"] = Str::slug($formData["name"]);
+        // $project->type_id = $formData['type_id'];
+        // Project::create($formData);
+
         return redirect()->route("admin.projects.show", $project->id);
 
     }
