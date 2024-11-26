@@ -6,3 +6,8 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+img {
+    max-height: 400px;
+    max-width: 200px;
+}

@@ -35,6 +35,15 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        // Todo: validami i dati e restituiscimi tutti i campi validati
+        $formData = $request->validate([
+            'name' => 'required|string|unique:projects|', // required = obblogatoria, deve essere di tipo stringa, il nome deve essere unico
+            'type_id' => 'required|string',
+            'short_description' => 'required|string',
+            'description' => 'required|string',
+            'image' => 'nullable|url:http,https',
+        ]);
+
         $formData = $request->all();
 
         $project = new Project();
@@ -45,17 +54,18 @@ class ProjectController extends Controller
         // $project->description = $formData['description'];
         // $project->image = $formData['image'];
 
-        // Todo: posso prendere i dati uno ad uno oppure utilizzare il fill
+        // Todo: posso prendere i dati uno ad uno oppure utilizzare il fill.
         $project->fill($formData);
         $project->type_id = $formData['type_id'];
         $project->slug = Str::slug($project->name);
         $project->save();
 
-        // Todo: altro modo per prendere i dati tramite create
+        // Todo: altro modo per prendere i dati tramite create, create ha il fill incluso e salva in automatico.
         // $formData["slug"] = Str::slug($formData["name"]);
         // $project->type_id = $formData['type_id'];
         // Project::create($formData);
 
+        // Todo: si puo scrivere anche solo to_route invece di redirect()->route.
         return redirect()->route("admin.projects.show", $project->id);
 
     }

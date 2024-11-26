@@ -1,8 +1,6 @@
 
 @extends("layouts.app")
 
-@section("page-title", "Project")
-
 @section("content")
 <main class="container">
     <div class="row d-flex justify-content-center">
