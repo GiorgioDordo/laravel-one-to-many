@@ -13,7 +13,7 @@
                 <div class="row d-flex flex-column">
                     <div class="col mb-3">
                         <label for="name" class="form-label">Nome</label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="progetto">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="progetto" value="{{old('name', '')}}">
                     </div>
 
                     <div class="col mb-3">
@@ -21,24 +21,24 @@
                         <select class="form-select" name="type_id" id="type_id" aria-label="Default select example">
                             <option value="">Selezione il tipo di progetto</option>
                             @foreach($types as $type)
-                                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                                <option @if (old('type_id', '') === '{{$type->name}}') selected @endif value="{{ $type->id }}">{{ $type->name }}</option>
                             @endforeach
                         </select>
                     </div>
 
                     <div class="col mb-3">
                         <label for="short_description" class="form-label">Short Description</label>
-                        <textarea type="text" name="short_description" class="form-control" id="short_description" rows="2"></textarea>
+                        <textarea type="text" name="short_description" class="form-control" id="short_description" rows="2" value="{{old('short_description', '')}}"></textarea>
                     </div>
 
                     <div class="col mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea type="text" name="description" class="form-control" id="description" rows="4"></textarea>
+                        <textarea type="text" name="description" class="form-control" id="description" rows="4">{{old('description', '')}}</textarea>
                     </div>
 
                     <div class="col mb-3">
                         <label for="image" class="form-label">Image</label>
-                        <input type="url" name="image" class="form-control" id="image">
+                        <input type="url" name="image" class="form-control" id="image" value="{{old('image', '')}}">
                     </div>
 
                     <div class="d-flex justify-content-around">

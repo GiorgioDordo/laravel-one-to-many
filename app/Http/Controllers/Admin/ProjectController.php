@@ -44,8 +44,6 @@ class ProjectController extends Controller
             'image' => 'nullable|url:http,https',
         ]);
 
-        $formData = $request->all();
-
         $project = new Project();
 
         // $project->name = $formData['name'];
