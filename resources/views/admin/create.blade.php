@@ -20,9 +20,15 @@
                         <label class="form-label" for="type_id">Type</label>
                         <select class="form-select" name="type_id" id="type_id" aria-label="Default select example">
                             <option value="">Selezione il tipo di progetto</option>
-                            @foreach($types as $type)
+                            <option @if (old('type_id', '') === '1') selected @endif value="1">Full-Stack</option>
+                            <option @if (old('type_id', '') === '2') selected @endif value="2">Front-End</option>
+                            <option @if (old('type_id', '') === '3') selected @endif value="3">Back-End</option>
+                            <option @if (old('type_id', '') === '4') selected @endif value="4">Database</option>
+
+                            {{-- Todo: non riesco a far funzionare l'old con il foreach --}}
+                            {{-- @foreach($types as $type)
                                 <option @if (old('type_id', '') === '{{$type->name}}') selected @endif value="{{ $type->id }}">{{ $type->name }}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                     </div>
 
